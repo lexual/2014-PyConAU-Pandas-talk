@@ -30,5 +30,6 @@ for url in urls:
     print(base)
     output_fname = base.replace('.axf', '_%s.axf' % now.isoformat())
     output_fname = output_fname.replace('.json', '_%s.json' % now.isoformat())
+    output_fname = output_fname.replace(':', '.')
     print(output_fname)
     os.system('wget {} -O {}'.format(url, output_fname))

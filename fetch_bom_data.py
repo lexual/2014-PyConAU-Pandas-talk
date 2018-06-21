@@ -15,6 +15,8 @@ urls = [
     'http://www.bom.gov.au/fwo/IDT60901/IDT60901.94970.json',
     'http://www.bom.gov.au/fwo/IDD60901/IDD60901.94120.axf',
     'http://www.bom.gov.au/fwo/IDD60901/IDD60901.94120.json',
+    'http://www.bom.gov.au/fwo/IDV60901/IDV60901.95936.axf',
+    'http://www.bom.gov.au/fwo/IDV60901/IDV60901.95936.json',
 ]
 
 import os
@@ -23,10 +25,10 @@ import datetime
 now = datetime.datetime.now()
 
 for url in urls:
-    print url
+    print(url)
     base = os.path.basename(url)
-    print base
+    print(base)
     output_fname = base.replace('.axf', '_%s.axf' % now.isoformat())
     output_fname = output_fname.replace('.json', '_%s.json' % now.isoformat())
-    print output_fname
+    print(output_fname)
     os.system('wget {} -O {}'.format(url, output_fname))

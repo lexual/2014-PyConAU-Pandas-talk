@@ -1,6 +1,6 @@
 
 nb:
-	ipython notebook --pylab inline
+	ipython notebook
 
 
 nb-slides:
